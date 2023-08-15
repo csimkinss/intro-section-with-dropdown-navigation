@@ -1,0 +1,143 @@
+header {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr 1fr;
+    padding: 2rem;
+
+    img {
+        display: inline-block;
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2rem;
+
+        button {
+            img {
+                display: inline;
+                margin-left: 0.5rem;
+                vertical-align: middle;
+            }
+        }
+        a {
+            transition: color 0.25s ease-in-out;
+        }
+
+        a:hover {
+            color: $almost-black;
+        }
+    }
+    .login {
+        grid-column-start: 3;
+        grid-row-start: 1;
+        justify-self: end;
+
+        a {
+            transition: color 0.25s ease-in-out;
+        }
+        button {
+            transition: color 0.25s ease-in-out;
+        }
+
+        a:hover {
+            color: $almost-black;
+        }
+        button:hover {
+            color: $almost-black;
+        }
+
+        button {
+            margin-left: 2rem;
+            background: transparent;
+            border-radius: 15px;
+            border: 2px solid $medium-gray;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+    }
+    a,
+    button {
+        text-decoration: none;
+        color: $medium-gray;
+    }
+
+    .dropdown {
+        display: inline-block;
+        position: relative;
+
+        button {
+            border: none;
+            background: none;
+            transition: color 0.25s ease-in-out;
+        }
+
+        button:hover {
+            color: $almost-black;
+        }
+    }
+    @media (min-width: 750px) {
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 2.25rem;
+            overflow: auto;
+            width: 10rem;
+            box-shadow: 0px 5px 20px rgba($medium-gray, 30%);
+            padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+            border-radius: 10px;
+            text-align: center;
+
+            a {
+                display: block;
+                padding: 0.25rem;
+                text-align: left;
+
+                span {
+                    margin-left: 0.75rem;
+                }
+            }
+        }
+        #dropdown-two {
+            width: 8rem;
+            left: 0;
+        }
+        .dropdown:hover .dropdown-options {
+            display: block;
+        }
+
+        .dropdown-button {
+            img {
+                transition: transform 0.35s ease-in-out;
+            }
+        }
+        .dropdown-button:hover {
+            cursor: pointer;
+            img {
+                transform: rotate(180deg);
+                fill: $almost-black;
+            }
+        }
+    }
+
+    @media (min-width: 750px) {
+        .open-menu {
+            display: none;
+        }
+        .hamburger-menu {
+            display: none;
+        }
+    }
+    @media (max-width: 749px) {
+        nav,
+        #login-desktop {
+            display: none;
+        }
+        .open-menu {
+            grid-column-start: 3;
+            justify-self: end;
+            background-color: transparent;
+            border: none;
+        }
+    }
+}

@@ -1,0 +1,136 @@
+@media (max-width: 1150px) {
+    header {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        height: 100dvh;
+        min-width: 350px;
+        background-color: $almost-white;
+        transform: scale(0, 1);
+        transform-origin: right;
+        transition: all 0.4s ease-in-out;
+        font-size: 1.35rem;
+
+        .dropdown img {
+            margin-left: 0.5rem;
+        }
+
+        .close-menu {
+            align-self: end;
+            width: fit-content;
+            background-color: $almost-white;
+            border: none;
+            padding: 2rem 2.5rem 2rem;
+        }
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            padding-top: 3rem;
+            text-align: center;
+
+            button {
+                margin: 0;
+                padding: 1rem 6rem;
+                border-radius: 23px;
+            }
+        }
+
+        .dropdown,
+        a {
+            padding: 1rem 2rem;
+        }
+        .dropdown button {
+            padding: 0;
+        }
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 100%;
+            height: 100vh;
+            height: 100dvh;
+            width: 100vw;
+            z-index: -1;
+            background-color: $almost-black;
+            opacity: 40%;
+        }
+        &.is-open {
+            transform: scale(1, 1);
+        }
+        .dropdown-options {
+            display: none;
+        }
+
+        .dropdown-open {
+            display: flex;
+            flex-direction: column;
+            transition: rotate 0.4s ease-in-out;
+            padding-top: 1.5rem;
+
+            span {
+                margin-left: 1.125rem;
+            }
+            img {
+                transform: scale(1.5);
+            }
+        }
+        .dropdown img {
+            margin-left: 1.25rem;
+            vertical-align: middle;
+        }
+        .button-open {
+            img {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    body {
+        .logo {
+            transform: scale(1.125);
+        }
+
+        .container {
+            grid-template-columns: 1fr;
+
+            .hero-mobile {
+                grid-column-start: 1;
+                grid-row-start: 1;
+                place-self: center;
+            }
+            .hero {
+                display: none;
+            }
+            article {
+                grid-column-start: 1;
+                grid-row-start: 3;
+                text-align: center;
+
+                p {
+                    margin: auto;
+                    padding-bottom: 1.5rem;
+                    font-size: 1.125rem;
+                }
+
+                h1 {
+                    font-size: 3.25rem;
+                    padding-bottom: 1.5rem;
+                }
+            }
+            .clients {
+                grid-row-start: 4;
+                padding-top: 2rem;
+                align-self: flex-start;
+            }
+        }
+    }
+}
