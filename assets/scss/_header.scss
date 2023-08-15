@@ -2,6 +2,8 @@ header {
     display: grid;
     grid-template-columns: 0.25fr 1fr 1fr;
     padding: 2rem;
+    position: relative;
+    z-index: 1;
 
     img {
         display: inline-block;
@@ -11,6 +13,7 @@ header {
         display: flex;
         justify-content: flex-start;
         gap: 2rem;
+        white-space: nowrap;
 
         button {
             img {
@@ -35,20 +38,20 @@ header {
         a {
             transition: color 0.25s ease-in-out;
         }
-        button {
+        .button {
             transition: color 0.25s ease-in-out;
         }
 
         a:hover {
             color: $almost-black;
         }
-        button:hover {
+        .button:hover {
             color: $almost-black;
         }
 
-        button {
-            margin-left: 2rem;
-            background: transparent;
+        .button {
+            margin: 0 1rem;
+            background: $almost-white;
             border-radius: 15px;
             border: 2px solid $medium-gray;
             padding: 0.5rem 1rem;
@@ -83,6 +86,7 @@ header {
             top: 2.25rem;
             overflow: auto;
             width: 10rem;
+            background-color: $almost-white;
             box-shadow: 0px 5px 20px rgba($medium-gray, 30%);
             padding: 0.75rem 0.75rem 0.75rem 1.25rem;
             border-radius: 10px;
@@ -98,7 +102,7 @@ header {
                 }
             }
         }
-        #dropdown-two {
+        .dropdown-two {
             width: 8rem;
             left: 0;
         }

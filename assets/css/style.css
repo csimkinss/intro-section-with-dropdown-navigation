@@ -103,6 +103,8 @@ header {
   display: grid;
   grid-template-columns: 0.25fr 1fr 1fr;
   padding: 2rem;
+  position: relative;
+  z-index: 1;
 }
 header img {
   display: inline-block;
@@ -111,6 +113,7 @@ header nav {
   display: flex;
   justify-content: flex-start;
   gap: 2rem;
+  white-space: nowrap;
 }
 header nav button img {
   display: inline;
@@ -131,18 +134,18 @@ header .login {
 header .login a {
   transition: color 0.25s ease-in-out;
 }
-header .login button {
+header .login .button {
   transition: color 0.25s ease-in-out;
 }
 header .login a:hover {
   color: hsl(0, 0%, 8%);
 }
-header .login button:hover {
+header .login .button:hover {
   color: hsl(0, 0%, 8%);
 }
-header .login button {
-  margin-left: 2rem;
-  background: transparent;
+header .login .button {
+  margin: 0 1rem;
+  background: hsl(0, 0%, 98%);
   border-radius: 15px;
   border: 2px solid hsl(0, 0%, 41%);
   padding: 0.5rem 1rem;
@@ -173,6 +176,7 @@ header .dropdown button:hover {
     top: 2.25rem;
     overflow: auto;
     width: 10rem;
+    background-color: hsl(0, 0%, 98%);
     box-shadow: 0px 5px 20px rgba(105, 105, 105, 0.3);
     padding: 0.75rem 0.75rem 0.75rem 1.25rem;
     border-radius: 10px;
@@ -186,7 +190,7 @@ header .dropdown button:hover {
   header .dropdown-options a span {
     margin-left: 0.75rem;
   }
-  header #dropdown-two {
+  header .dropdown-two {
     width: 8rem;
     left: 0;
   }
@@ -227,36 +231,35 @@ header .dropdown button:hover {
 
 body {
   background-color: hsl(0, 0%, 98%);
-  height: 100vh;
-  height: 100dvh;
-  width: 100vw;
-  min-width: fit-content;
   font-family: "Epilogue";
 }
-body .container {
+
+.container {
   display: grid;
   grid-template-columns: auto;
+  width: 100%;
 }
-body .container article {
+.container article {
   grid-column-start: 1;
   place-self: center;
   padding: 2rem;
-  width: 36rem;
+  max-width: 36rem;
 }
-body .container article h1 {
+.container article h1 {
   font-size: 4.75rem;
   line-height: 1.125;
   padding: 3rem 0;
 }
-body .container article p {
-  width: 28rem;
+.container article p {
+  max-width: 28rem;
   line-height: 1.5;
   color: hsl(0, 0%, 41%);
   font-size: 1.125rem;
   padding-bottom: 3rem;
 }
-body .container article button {
+.container article button {
   background-color: hsl(0, 0%, 8%);
+  border: 1px solid hsl(0, 0%, 8%);
   border-radius: 15px;
   padding: 1rem 2rem;
   color: hsl(0, 0%, 98%);
@@ -264,25 +267,25 @@ body .container article button {
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
-body .container article button:hover {
+.container article button:hover {
   background-color: transparent;
   color: hsl(0, 0%, 8%);
   border-color: hsl(0, 0%, 8%);
 }
-body .container .clients {
+.container .clients {
   display: flex;
   justify-content: center;
   gap: 3rem;
   padding-top: 6rem;
 }
 @media (min-width: 1001px) {
-  body .container .hero {
+  .container .hero {
     grid-row: 1/span 2;
     grid-column-start: 2;
     padding: 2rem;
     width: 38rem;
   }
-  body .container .hero-mobile {
+  .container .hero-mobile {
     display: none;
   }
 }
@@ -293,6 +296,9 @@ body .container .clients {
   }
 }
 @media (max-width: 1000px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+  }
   .hamburger-menu {
     display: flex;
     flex-direction: column;
@@ -301,7 +307,8 @@ body .container .clients {
     right: 0;
     height: 100vh;
     height: 100dvh;
-    min-width: 350px;
+    max-width: 350px;
+    width: 100%;
     background-color: hsl(0, 0%, 98%);
     transform: scale(0, 1);
     transform-origin: right;
@@ -326,7 +333,8 @@ body .container .clients {
   }
   .hamburger-menu .login button {
     margin: 0;
-    padding: 1rem 6rem;
+    padding: 1rem;
+    width: 100%;
     border-radius: 23px;
   }
   .hamburger-menu .dropdown,

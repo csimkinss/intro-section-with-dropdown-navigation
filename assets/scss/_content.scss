@@ -1,21 +1,19 @@
 body {
     background-color: $almost-white;
-    height: 100vh;
-    height: 100dvh;
-    width: 100vw;
-    min-width: fit-content;
     font-family: "Epilogue";
+}
 
     .container {
         display: grid;
         grid-template-columns: auto;
+        width: 100%;
 
         article {
             grid-column-start: 1;
             // grid-row-start: 1;
             place-self: center;
             padding: 2rem;
-            width: 36rem;
+            max-width: 36rem;
 
             h1 {
                 font-size: 4.75rem;
@@ -23,7 +21,7 @@ body {
                 padding: 3rem 0;
             }
             p {
-                width: 28rem;
+                max-width: 28rem;
                 line-height: 1.5;
                 color: $medium-gray;
                 font-size: 1.125rem;
@@ -31,6 +29,7 @@ body {
             }
             button {
                 background-color: $almost-black;
+                border: 1px solid $almost-black;
                 border-radius: 15px;
                 padding: 1rem 2rem;
                 color: $almost-white;
@@ -68,4 +67,4 @@ body {
         //     grid-template-columns: 1fr;
         // }
     }
-}
+

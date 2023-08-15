@@ -17,8 +17,4 @@ for (const button of dropdownOpen) {
         button.classList.toggle("button-open");
     })
 }
-const dropdown = document.querySelectorAll("section .dropdown-options");
-dropdownOpen.addEventListener('click', function(e) {
-    dropdown.classList.add("dropdown-open");
-})
 
