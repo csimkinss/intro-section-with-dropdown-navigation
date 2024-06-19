@@ -173,7 +173,7 @@ header .dropdown button:hover {
     display: none;
     position: absolute;
     right: 0;
-    top: 2.25rem;
+    top: 100%;
     overflow: auto;
     width: 10rem;
     background-color: hsl(0, 0%, 98%);
@@ -315,6 +315,25 @@ body {
     transition: all 0.4s ease-in-out;
     font-size: 1.35rem;
   }
+  .hamburger-menu:before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 100%;
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    z-index: -1;
+    opacity: 0%;
+    transition: all 0.4s ease-in-out 0.18s;
+  }
+  .hamburger-menu.is-open {
+    transform: scale(1, 1);
+  }
+  .hamburger-menu.is-open:before {
+    opacity: 40%;
+    background-color: hsl(0, 0%, 8%);
+  }
   .hamburger-menu .dropdown img {
     margin-left: 0.5rem;
   }
@@ -343,21 +362,6 @@ body {
   }
   .hamburger-menu .dropdown button {
     padding: 0;
-  }
-  .hamburger-menu:before {
-    content: "";
-    display: block;
-    position: absolute;
-    right: 100%;
-    height: 100vh;
-    height: 100dvh;
-    width: 100vw;
-    z-index: -1;
-    background-color: hsl(0, 0%, 8%);
-    opacity: 40%;
-  }
-  .hamburger-menu.is-open {
-    transform: scale(1, 1);
   }
   .hamburger-menu .dropdown-options {
     display: none;
