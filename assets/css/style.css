@@ -312,7 +312,7 @@ body {
     background-color: hsl(0, 0%, 98%);
     transform: scale(0, 1);
     transform-origin: right;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in 0.15s;
     font-size: 1.35rem;
   }
   .hamburger-menu:before {
@@ -324,13 +324,15 @@ body {
     height: 100dvh;
     width: 100vw;
     z-index: -1;
-    opacity: 0%;
-    transition: all 0.4s ease-in-out 0.18s;
+    opacity: 0;
+    transition: all 0.4s ease-in 0.3s;
+    transition: all 0.4s ease-out 0.1s;
   }
   .hamburger-menu.is-open {
     transform: scale(1, 1);
+    transition: all 0.24s ease-in-out;
   }
-  .hamburger-menu.is-open:before {
+  .hamburger-menu.is-open.hamburger-menu:before {
     opacity: 40%;
     background-color: hsl(0, 0%, 8%);
   }
